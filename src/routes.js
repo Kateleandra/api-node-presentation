@@ -1,14 +1,8 @@
 const express = require("express");
 const routes = express.Router();
 
-routes.get("/", (req, res) =>{
-    Date.create({
-        title: "teste",
-        description: "Teste conteudo",
-        technology: "React"
-    });
+const DataController = require('./controllers/DataController');
 
-    return res.send("oii")
-});
+routes.get("/datas", DataController.index);
 
 module.exports = routes;
